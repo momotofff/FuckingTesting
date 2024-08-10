@@ -5,9 +5,7 @@ import java.util.Map;
 
 public class Lesson1
 {
-    public Lesson1() {}
-
-    public static int getCountChar(String str1, String str2)
+    public static int getCharCount(String str1, String str2)
     {
         Map<Character, Integer> map = new HashMap<>();
 
@@ -20,12 +18,12 @@ public class Lesson1
         int plus = 0;
         int minus = 0;
 
-        for (int i : map.values())
+        for (int value : map.values())
         {
-            if (i > 0)
-                plus += i;
-            else if (i < 0)
-                minus -= i;
+            if (value > 0)
+                plus += value;
+            else if (value < 0)
+                minus -= value;
         }
 
         return Math.max(plus, minus);

@@ -3,24 +3,53 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import static junit.framework.Assert.assertEquals;
 
-class Lesson1Test {
+class Lesson1Test
+{
+    @Test
+    void getCharsCount_ExpectOne()
+    {
+        assertEquals(1, Lesson1.getCharCount("жопа", "попа"));
+    }
 
     @Test
-    void getCountChar()
+    void getCharsCount_ExpectFive()
     {
-        //test1
-        assertEquals(1, Lesson1.getCountChar("жопа", "попа"));
+        assertEquals(5, Lesson1.getCharCount("пизда", "хуй"));
+    }
 
-        //test2
-        assertEquals(5, Lesson1.getCountChar("пизда", "хуй"));
+    @Test
+    void getCharsCount_ExpectZero()
+    {
+        assertEquals(0, Lesson1.getCharCount("Я кушаю не говно", "говно кушаю не я"));
+    }
 
-        //test3
-        assertEquals(0, Lesson1.getCountChar("Я кушаю не говно", "говно кушаю не я"));
+    @Test
+    void getCharsCount_Uppercase_ExpectCorrect()
+    {
+        assertEquals(0, Lesson1.getCharCount("голос овощей", "ГОЛОС ОВОЩЕЙ"));
+    }
 
-        //test4
-        assertEquals(3, Lesson1.getCountChar("голос овощей", "ГОЛОС ОВО..."));
+    @Test
+    void getCharsCount_ExtraSpace_ExpectCorrect()
+    {
+        assertEquals(1, Lesson1.getCharCount("поза 69", "поза  69"));
+    }
 
-        //test5
-        assertEquals(1, Lesson1.getCountChar("поза 69", "ПоЗа  69"));
+    @Test
+    void getCharsCount_SpecialSymbols_ExpectCorrect()
+    {
+        assertEquals(1, Lesson1.getCharCount(":-)", ":-("));
+    }
+
+    @Test
+    void getCharsCount_SameStrings_ExpectZero()
+    {
+        assertEquals(0, Lesson1.getCharCount("blah", "blah"));
+    }
+
+    @Test
+    void getCharsCount_EmptyString_ExpectCorrect()
+    {
+        assertEquals(4, Lesson1.getCharCount("", "blah"));
     }
 }
