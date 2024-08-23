@@ -24,10 +24,7 @@ class Lesson1Test
     }
 
     @Test
-    void getCharsCount_Uppercase_ExpectCorrect()
-    {
-        assertEquals(0, Lesson1.getCharCount("голос овощей", "ГОЛОС ОВОЩЕЙ"));
-    }
+    void getCharsCount_Uppercase_ExpectCorrect() { assertEquals(0, Lesson1.getCharCount("голос овощей", "ГОЛОС ОВОЩЕЙ")); }
 
     @Test
     void getCharsCount_ExtraSpace_ExpectCorrect()
