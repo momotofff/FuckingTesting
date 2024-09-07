@@ -41,18 +41,11 @@ jobs:
       - name: Deploy Badges
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Update badges [skip ci]"
+          commit_message: "Update badges"
           branch: gh-pages
           skip_fetch: true
           skip_checkout: true
           
-      - name: Commit and push the badge (if it changed)
-        uses: EndBug/add-and-commit@v9
-        with:
-          default_author: github_actions
-          message: 'commit badge'
-          add: '*.svg'
-
       - name: Upload JaCoCo coverage report
         uses: actions/upload-artifact@v4
         with:
