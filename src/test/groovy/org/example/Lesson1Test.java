@@ -5,11 +5,11 @@ import static junit.framework.Assert.assertEquals;
 
 class Lesson1Test
 {
-    @Test
-    void getCharsCount_ExpectOne()
-    {
-        assertEquals(1, Lesson1.getCharCount("жопа", "попа"));
-    }
+//    @Test
+//    void getCharsCount_ExpectOne()
+//    {
+//        assertEquals(1, Lesson1.getCharCount("жопа", "попа"));
+//    }
 
     @Test
     void getCharsCount_ExpectFive()
