@@ -1,0 +1,33 @@
+name: Badge
+
+on:
+  workflow_run:
+    workflows: ["Java CI with Maven"]
+    types:
+      - completed
+  pull_request:
+    branches:
+      - main
+jobs:
+  badges:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/
+
+      - name: Deploy Badges
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update badges [skip ci]"
+          branch: gh-pages
+          skip_fetch: true
+          skip_checkout: true
+
+      - name: Commit and push the badge (if it changed)
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: 'commit badge'
+          add: '*.svg'
