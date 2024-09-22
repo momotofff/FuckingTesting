@@ -19,13 +19,13 @@ jobs:
 
       - name: show run id
         run: | 
-          echo "run id = ${{ github.event.workflow_run.workflow_id }}"
+          echo "run id = $GITHUB_RUN_ID"
 
       - uses: actions/download-artifact@v4
         with:
           name: jacoco-report
           path: target/site/jacoco/
-          run-id: ${{ github.event.workflow_run.workflow_id }}
+          run-id: $GITHUB_RUN_ID
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate JaCoCo Badge
