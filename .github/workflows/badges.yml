@@ -23,6 +23,7 @@ jobs:
           echo "commit hash = $GITHUB_SHA"
 
       - name: Download artifact
+        id: download
 	uses: dawidd6/action-download-artifact@v6
 	with:
 	  github_token: ${{secrets.GITHUB_TOKEN}}
