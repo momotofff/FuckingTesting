@@ -20,6 +20,7 @@ jobs:
           echo ${{ github.event.workflow_run.workflow_id }}
           echo ${{ github.event.workflow_run.id }}
           echo ${{ github.event.workflow_run.workflow.id }}
+          echo $GITHUB_RUN_ID
 
       - uses: actions/checkout@v4
 
