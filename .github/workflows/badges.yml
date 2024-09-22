@@ -22,11 +22,10 @@ jobs:
           echo "run id = $GITHUB_RUN_ID"
           echo "commit hash = $GITHUB_SHA"
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v3
         with:
           name: jacoco-report-${{ github.sha }}
           path: target/site/jacoco/
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate JaCoCo Badge
         id: jacoco
