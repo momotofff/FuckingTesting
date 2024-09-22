@@ -24,10 +24,10 @@ jobs:
 
       - name: Download artifact
         id: download
-	uses: dawidd6/action-download-artifact@v6
-	with:
-	  github_token: ${{secrets.GITHUB_TOKEN}}
-	  workflow: maven.yml
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: maven.yml
           name: jacoco-report-${{ github.sha }}
           path: target/site/jacoco/
 
