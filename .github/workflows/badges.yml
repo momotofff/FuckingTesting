@@ -20,10 +20,11 @@ jobs:
       - name: show run id
         run: | 
           echo "run id = $GITHUB_RUN_ID"
+          echo "commit hash = $GITHUB_SHA"
 
       - uses: actions/download-artifact@v4
         with:
-          name: jacoco-report
+          name: jacoco-report-$GITHUB_SHA
           path: target/site/jacoco/
           run-id: $GITHUB_RUN_ID
           github-token: ${{ secrets.GITHUB_TOKEN }}
