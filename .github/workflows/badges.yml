@@ -24,6 +24,7 @@ jobs:
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: maven.yml
+          pr: ${{github.event.pull_request.number}}
           name: jacoco-report-${{ github.sha }}
           path: target/site/jacoco/
 
