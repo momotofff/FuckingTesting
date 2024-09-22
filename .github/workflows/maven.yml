@@ -3,7 +3,8 @@ name: Java CI with Maven
 on:
   workflow_dispatch:
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - "main"
     types:
       - opened
       - edited
@@ -23,11 +24,6 @@ jobs:
 
       - name: Build with Maven
         run: mvn -B test
-
-      - name: Log coverage percentage
-        run: |
-          echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
-          echo "branch coverage = ${{ steps.jacoco.outputs.branches }}"
 
       - name: Upload JaCoCo coverage report
         uses: actions/upload-artifact@v4
