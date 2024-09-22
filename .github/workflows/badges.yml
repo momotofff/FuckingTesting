@@ -17,6 +17,10 @@ jobs:
         with:
           ref: gh-pages
 
+      - name: show run id
+        run: | 
+          echo "run id = ${{ github.event.workflow_run.id }}"
+
       - uses: actions/download-artifact@v4
         with:
           name: jacoco-report
