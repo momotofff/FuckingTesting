@@ -15,6 +15,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: show run id
+        run: | 
+          echo "run id = ${{ github.event.workflow_run.workflow_id }}"
+          echo "run id = ${{ github.event.workflow_run.id }}"
+          echo "run id = ${{ github.event.workflow_run.workflow.id }}"
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-java@v4
