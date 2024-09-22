@@ -22,8 +22,11 @@ jobs:
           echo "run id = $GITHUB_RUN_ID"
           echo "commit hash = $GITHUB_SHA"
 
-      - uses: actions/download-artifact@v3
-        with:
+      - name: Download artifact
+	uses: dawidd6/action-download-artifact@v6
+	with:
+	  github_token: ${{secrets.GITHUB_TOKEN}}
+	  workflow: maven.yml
           name: jacoco-report-${{ github.sha }}
           path: target/site/jacoco/
 
