@@ -17,9 +17,9 @@ jobs:
     steps:
       - name: show run id
         run: | 
-          echo "run id = ${{ github.event.workflow_run.workflow_id }}"
-          echo "run id = ${{ github.event.workflow_run.id }}"
-          echo "run id = ${{ github.event.workflow_run.workflow.id }}"
+          echo ${{ github.event.workflow_run.workflow_id }}
+          echo ${{ github.event.workflow_run.id }}
+          echo ${{ github.event.workflow_run.workflow.id }}
 
       - uses: actions/checkout@v4
 
