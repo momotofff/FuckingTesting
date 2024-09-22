@@ -16,13 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: show run id
-        run: | 
-          echo "run id = $GITHUB_RUN_ID"
-          echo "commit hash = $GITHUB_SHA"
+        name: Checkout repository
 
       - uses: actions/setup-java@v4
+        name: Setup JAVA
         with:
           java-version: '17.0.11'
           distribution: 'temurin'
