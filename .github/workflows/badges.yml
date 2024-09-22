@@ -24,7 +24,7 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: jacoco-report-${{ env.GITHUB_SHA }}
+          name: jacoco-report-${{ github.sha }}
           path: target/site/jacoco/
           run-id: $GITHUB_RUN_ID
           github-token: ${{ secrets.GITHUB_TOKEN }}
